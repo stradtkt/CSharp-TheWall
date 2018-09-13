@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Wall</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css">
+        <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/theme/assets/css/now-ui-kit.min.css">
+    </environment>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top bg-info">
+  <div class="container">
+    <a class="navbar-brand" href="#">Wall</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" asp-action="Dashboard" asp-controller="Home">Wall</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+</nav>
+    <div class="container mt-5">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - Wall</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/theme/assets/js/core/jquery.min.js"></script>
+        <script src="~/theme/assets/js/core/bootstrap.min.js"></script>
+        <script src="~/theme/assets/js/core/popper.min.js"></script>
+        <script src="~/theme/assets/js/now-ui-kit.min.js"></script>
+        <script src="~/theme/assets/js/plugins/bootstrap-selectpicker.js"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

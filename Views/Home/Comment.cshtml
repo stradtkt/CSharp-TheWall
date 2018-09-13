@@ -1,0 +1,62 @@
+@model Wall.Models.Comment
+
+<div class="row">
+    <div class="col-md-10 offset-1 mt-5 mb-5">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                @ViewBag.message.Users.first_name @ViewBag.message.Users.last_name
+            </div>
+            <div class="card-body">
+                <h4>@ViewBag.message.message</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <h3 class="text-center">Leave A Comment</h3>
+        <form action="/ProcessComment" method="POST">
+            <div class="form-group">
+                <input type="hidden" name="message_id" value="@ViewBag.message.message_id">
+                <textarea name="comm" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Post" class="btn btn-round btn-success">
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var c in ViewBag.message.Comments)
+    {
+        <div class="col-md-10 offset-1">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                @c.Users.first_name @c.Users.last_name 
+            </div>
+            <div class="card-body">
+                <p class="card-text">@c.comment</p>
+            </div>
+            <div class="card-footer text-muted mb-2">
+                @c.created_at
+                @if(ViewBag.user.user_id == c.Users.user_id)
+                {
+                    <form action="/delete_comment/{commentid}" method="POST">
+                        <input type="hidden" name="commentid" value="@c.comment_id">
+                        <input type="submit" value="Delete" class="btn btn-round btn-danger">
+                    </form>
+                }
+                else
+                {
+                    <p></p>
+                }
+            </div>
+        </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <a asp-action="Logout" asp-controller="Home" class="btn btn-round btn-danger">Logout</a>
+    </div>
+</div>

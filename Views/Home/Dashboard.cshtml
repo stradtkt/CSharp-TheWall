@@ -1,0 +1,55 @@
+@model Wall.Models.Message
+
+<div class="row">
+    <div class="col-md-10 offset-1 mt-5 mb-5">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                Post A Message
+            </div>
+            <div class="card-body">
+                <form asp-action="ProcessPost" asp-controller="Home" method="POST">
+                    <div class="form-group">
+                        <textarea asp-for="message" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <input type="submit" value="Post" class="btn btn-round btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var m in ViewBag.messages)
+    {
+        <div class="col-md-10 offset-1">
+        <div class="card text-center">
+            <div class="card-header mt-2">
+                @m.Users.first_name @m.Users.last_name 
+            </div>
+            <div class="card-body">
+                <p class="card-text">@m.message</p>
+                <a href="comment/@m.message_id" class="btn btn-success btn-round">Comments @m.Comments.Count</a>
+                @if(ViewBag.user.user_id == m.Users.user_id)
+                {
+                    <form action="delete/{messageid}" method="POST">
+                        <input type="hidden" name="messageid" value="@m.message_id">
+                        <input type="submit" value="Delete" class="btn btn-round btn-danger">
+                    </form>
+                }
+                else
+                {
+                    <p></p>
+                }
+            </div>
+            <div class="card-footer text-muted mb-2">
+                @m.created_at
+            </div>
+        </div>
+        </div>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <a asp-action="Logout" asp-controller="Home" class="btn btn-round btn-danger">Logout</a>
+    </div>
+</div>

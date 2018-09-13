@@ -1,0 +1,37 @@
+@model Wall.Models.LoginUser
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="bg-danger">
+            <p class="text-center">@ViewBag.errors</p>
+        </div>
+        <div class="bg-success">
+            <p class="text-center">@ViewBag.success</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h1 class="text-center">Login</h1>
+        <form asp-action="LoginUser" asp-controller="Home" method="POST">
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="email" placeholder="Email"></span>
+                </div>
+                <input asp-for="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="password"></span>
+                </div>
+                <input asp-for="password" class="form-control" placeholder="Password">
+            </div>
+            <input type="submit" value="Login" class="btn btn-success btn-round">
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p class="lead text-center">Need to register instead? <a asp-action="Register" asp-controller="Home" asp-area="" class="btn btn-round btn-info">Register</a></p>
+    </div>
+</div>

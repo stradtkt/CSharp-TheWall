@@ -1,0 +1,11 @@
+E:\csharp\KevinStradtman\Wall\bin\Debug\netcoreapp2.0\Wall.deps.json
+E:\csharp\KevinStradtman\Wall\bin\Debug\netcoreapp2.0\Wall.runtimeconfig.json
+E:\csharp\KevinStradtman\Wall\bin\Debug\netcoreapp2.0\Wall.runtimeconfig.dev.json
+E:\csharp\KevinStradtman\Wall\bin\Debug\netcoreapp2.0\Wall.dll
+E:\csharp\KevinStradtman\Wall\bin\Debug\netcoreapp2.0\Wall.pdb
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.csprojResolveAssemblyReference.cache
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.csproj.CoreCompileInputs.cache
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.AssemblyInfoInputs.cache
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.AssemblyInfo.cs
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.dll
+E:\csharp\KevinStradtman\Wall\obj\Debug\netcoreapp2.0\Wall.pdb

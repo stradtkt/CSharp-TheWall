@@ -1,0 +1,52 @@
+﻿@model Wall.Models.RegisterUser
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="bg-danger">
+            <p class="text-center">@ViewBag.errors</p>
+        </div>
+        <div class="bg-success">@ViewBag.success</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h1 class="text-center">Register</h1>
+        <form asp-action="RegisterUser" asp-controller="Home" method="POST">
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="first_name"></span>
+                </div>
+                <input asp-for="first_name" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="last_name"></span>
+                </div>
+                <input asp-for="last_name" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="email"></span>
+                </div>
+                <input asp-for="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="password"></span>
+                </div>
+                <input asp-for="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <div class="bg-danger">
+                    <span asp-validation-for="confirm"></span>
+                </div>
+                <input asp-for="confirm" class="form-control" placeholder="Confirm Password">
+            </div>
+            <input type="submit" value="Register" class="btn btn-success btn-round">
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p class="lead text-center">Need to log in instead? <a asp-action="Login" asp-controller="Home" asp-area="" class="btn btn-round btn-info">Login</a></p>
+    </div>
+</div>
