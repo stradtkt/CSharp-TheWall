@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Wall</title>
 
-    <environment include="Development">
         <link rel="stylesheet" href="~/css/site.css">
         <link rel="stylesheet" href="~/theme/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="~/theme/assets/css/now-ui-kit.min.css">
-    </environment>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top bg-info">
@@ -35,13 +33,11 @@
         </footer>
     </div>
 
-    <environment include="Development">
         <script src="~/theme/assets/js/core/jquery.min.js"></script>
         <script src="~/theme/assets/js/core/bootstrap.min.js"></script>
         <script src="~/theme/assets/js/core/popper.min.js"></script>
         <script src="~/theme/assets/js/now-ui-kit.min.js"></script>
         <script src="~/theme/assets/js/plugins/bootstrap-selectpicker.js"></script>
-    </environment>
 
     @RenderSection("Scripts", required: false)
 </body>
